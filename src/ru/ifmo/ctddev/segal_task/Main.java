@@ -1,4 +1,4 @@
-package com.company;
+package ru.ifmo.ctddev.segal_task;
 
 public class Main {
 
