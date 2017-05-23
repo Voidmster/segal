@@ -22,10 +22,10 @@ public class Gauss {
                     if (k != i) {
                         d = a[k][j] / a[i][j];
                         kf *= d;
-                        for (int z = 0; z <= N; z++) {
+                        for (int z = 0; z < N; z++) {
                             a[k][z] -= a[i][z] * d;
                         }
-                        for (int z = 0; z <= N; z++) {
+                        for (int z = 0; z < N; z++) {
                             c[k][z] -= c[i][z] * d;
                         }
                     }
