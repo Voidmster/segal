@@ -1,4 +1,4 @@
-package ru.ifmo.ctddev.segal_task;
+package ru.ifmo.ctddev.segal-task;
 
 public class Main {
 
