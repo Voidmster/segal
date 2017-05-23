@@ -1,3 +1,5 @@
+package ru.ifmo.ctddev.segal_task;
+
 public class Utils {
     public static double[][] getWellConditionedMatrix(int n) {
         double[][] a = new double[n][n];
