@@ -18,6 +18,7 @@ public class Seidel {
         }
         if (sumd < sum) {
             System.out.println("Can`t solve");
+            return;
         }
         double x[] = new double[10];
         for (int i = 0; i < size; i++) {
