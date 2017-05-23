@@ -21,6 +21,6 @@ public class Main {
         System.out.println("=== Gauss (" + comment + "):");
         Gauss.solve(a);
         System.out.println("=== Jacobi (" + comment + "):");
-        //Jacobi.solve(a);
+        Jacobi.solve(a);
     }
 }

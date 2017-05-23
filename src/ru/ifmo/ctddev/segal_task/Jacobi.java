@@ -25,7 +25,7 @@ public class Jacobi {
         double[] x = new double[N];
         for (int i = 0; i < N; ++i) {
             if (Math.abs(a[i][i]) > EPS) {
-                x[i] = (a[i][N] / a[i][i]);
+                x[i] = (a[i][N - 1] / a[i][i]);
             }
         }
         double[] TempX = new double[N];
@@ -34,7 +34,7 @@ public class Jacobi {
         do {
             iteration++;
             for (int i = 0; i < N; i++) {
-                TempX[i] = a[i][N];
+                TempX[i] = a[i][N - 1];
                 for (int j = 0; j < N; j++) {
                     if (i != j) {
                         TempX[i] -= a[i][j] * x[j];
