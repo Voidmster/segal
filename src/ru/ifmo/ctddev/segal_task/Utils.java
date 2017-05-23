@@ -2,7 +2,7 @@ package ru.ifmo.ctddev.segal_task;
 
 public class Utils {
     public static double[][] getWellConditionedMatrix(int n) {
-        double[][] a = new double[n][n];
+        double[][] a = new double[n][n + 1];
 
         for (int i = 0; i < n; i++) {
             for (int j = 0; j < n; j++) {
@@ -10,31 +10,43 @@ public class Utils {
             }
             a[i][i] = -1;
         }
+
+        for (int i = 0; i < n; i++) {
+            a[i][n] = i;
+        }
         return a;
     }
 
     public static double[][] getIllConditionedMatrix(int n) {
-        double[][] a = new double[n][n];
+        double[][] a = new double[n][n + 1];
 
         for (int i = 0; i < n; i++) {
             for (int j = 0; j < n; j++) {
                 a[i][j] = 1.0 / (i + j + 1);
             }
         }
+
+        for (int i = 0; i < n; i++) {
+            a[i][n] = i;
+        }
         return a;
     }
 
     public static double[][] identityMatrix(int n) {
-        double[][] a = new double[n][n];
+        double[][] a = new double[n][n + 1];
 
         for (int i = 0; i < n; i++) {
             a[i][i] = 1.0;
+        }
+
+        for (int i = 0; i < n; i++) {
+            a[i][n] = i;
         }
         return a;
     }
 
     public static double[][] zeroMatrix(int n) {
-        double[][] a = new double[n][n];
+        double[][] a = new double[n][n + 1];
         return a;
     }
 }

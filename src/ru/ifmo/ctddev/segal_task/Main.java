@@ -12,6 +12,24 @@ public class Main {
 //            }
 //        }
 //        makeTest(a, n);
+        System.out.println("Ill conditioned matrix: ");
+        double [][] tt = Utils.getIllConditionedMatrix(10);
+        for (int i = 0; i < 10; i++) {
+            for (int j = 0; j <= 10; j++) {
+                System.out.print(tt[i][j] + " ");
+            }
+            System.out.print("\n");
+        }
+
+        System.out.println("Well conditioned matrix: ");
+        double [][] ttt = Utils.getWellConditionedMatrix(10);
+        for (int i = 0; i < 10; i++) {
+            for (int j = 0; j <= 10; j++) {
+                System.out.print(ttt[i][j] + " ");
+            }
+            System.out.print("\n");
+        }
+
         makeTest(Utils.getIllConditionedMatrix(10), "ill cond");
         makeTest(Utils.getWellConditionedMatrix(10), "well cond");
         makeTest(Utils.identityMatrix(10), "ident");
