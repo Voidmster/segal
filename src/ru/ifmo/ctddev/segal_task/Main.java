@@ -12,18 +12,15 @@ public class Main {
 //            }
 //        }
 //        makeTest(a, n);
-        makeTest(Utils.getIllConditionedMatrix(10), 10);
-        makeTest(Utils.getIllConditionedMatrix(10), 10);
-        makeTest(Utils.identityMatrix(10), 10);
-        makeTest(Utils.zeroMatrix(10), 10);
+        makeTest(Utils.getIllConditionedMatrix(10), "ill cond");
+        makeTest(Utils.getWellConditionedMatrix(10), "well cond");
+        makeTest(Utils.identityMatrix(10), "ident");
     }
 
-    public static void makeTest(double[][] a, int n) {
-        for (int k = 0; k < n; k++) {
-            System.out.print("Gauss answer to test " + k + ":");
-            Gauss.solve(a);
-            System.out.print("Jacobi answer to test " + k + ":");
-            Jacobi.solve(a);
-        }
+    public static void makeTest(double[][] a, String comment) {
+        System.out.println("=== Gauss (" + comment + "):");
+        Gauss.solve(a);
+        System.out.println("=== Jacobi (" + comment + "):");
+        //Jacobi.solve(a);
     }
 }

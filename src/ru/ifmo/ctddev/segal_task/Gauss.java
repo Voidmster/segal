@@ -13,7 +13,7 @@ public class Gauss {
         double kf = 1;
         for (int i = 0; i < N; i++) {
             int j = 0;
-            while (Math.abs(a[i][j]) < EPS && j < N) {
+            while (j < N && Math.abs(a[i][j]) < EPS) {
                 j++;
             }
             if (j != N) {
@@ -33,7 +33,7 @@ public class Gauss {
             }
         }
         for (int i = 0; i < N; i++) {
-            System.out.println(String.format("%.8f", a[i][N] / a[i][i]));
+            System.out.println(String.format("%.8f", a[i][N - 1] / a[i][i]));
         }
         double mx1 = 0, mx2 = 0;
         for (int i = 0; i < N; i++) {
