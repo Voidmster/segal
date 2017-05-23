@@ -9,8 +9,8 @@ public class Jacobi {
     public static void solve(double[][] a) {
         double sumD = 0;
         double sum = 0;
-        for (int i = 0; i < N; ++i) {
-            for (int j = 0; j < N; ++j) {
+        for (int i = 0; i < N; i++) {
+            for (int j = 0; j < N; j++) {
                 if (i != j) {
                     sum += Math.abs(a[i][j]);
                 } else {
@@ -53,7 +53,7 @@ public class Jacobi {
             }
         } while (norm > 1e-9 && iteration < 1e6);
         for (int i = 0; i < N; i++) {
-            System.out.println(x[i]);
+            System.out.println(String.format("%.8f", x[i]));
         }
         System.out.println("Count of iterations " + iteration);
     }
