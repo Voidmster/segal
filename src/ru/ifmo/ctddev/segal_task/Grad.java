@@ -1,10 +1,12 @@
+package ru.ifmo.ctddev.segal_task;
+
 /**
  * Created by bigz on 24.05.17.
  */
 public class Grad {
     private final double eps = 1e-9;
 
-    void process(int size, double[][] matrix) {
+    static void process(int size, double[][] matrix) {
         for (int i = 0; i < size; i++) {
             for (int j = 0; j < size; j++) {
                 if (matrix[i][j] != matrix[j][i]) {

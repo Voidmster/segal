@@ -1,14 +1,16 @@
+package ru.ifmo.ctddev.segal_task;
+
 /**
  * Created by bigz on 23.05.17.
  */
 public class Seidel {
-    final double eps = 1e-9;
+    static final double eps = 1e-9;
 
 
-    void process(int size, double[][] matrix, double om) {
+    static void process(int size, double[][] matrix, double om) {
         double sumd = 0, sum = 0;
         for (int i = 0; i < size; i++) {
-            for (int j = 0; i < size; j++) {
+            for (int j = 0; j < size; j++) {
                 if (i != j) {
                     sum += Math.abs(matrix[i][j]);
                 } else {
