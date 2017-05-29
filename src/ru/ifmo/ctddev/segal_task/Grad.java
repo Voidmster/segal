@@ -37,7 +37,13 @@ public class Grad {
                     t += matrix[i][j] * z[j];
                 w += t * z[i];
             }
-            double alpha = v / w;
+            double alpha;
+            if (v == 0 || w == 0) {
+                alpha = 0;
+            } else {
+                alpha = v / w;
+            }
+
             for (int i = 0; i < size; ++i)
                 x[i] += alpha * z[i];
             double r_prev[] = r.clone();
@@ -53,7 +59,13 @@ public class Grad {
             w = 0;
             for (int i = 0; i < size; ++i)
                 w += r_prev[i] * r_prev[i];
-            double beta = v / w;
+            double beta;
+            if (v == 0 || w == 0) {
+                beta = 0;
+            } else {
+                beta = v / w;
+            }
+
             for (int i = 0; i < size; ++i)
                 z[i] = r[i] + beta * z[i];
         }
