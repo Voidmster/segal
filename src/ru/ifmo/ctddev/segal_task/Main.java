@@ -33,7 +33,7 @@ public class Main {
 
         makeTest(Utils.getIllConditionedMatrix(10), "ill cond");
         makeTest(Utils.getWellConditionedMatrix(10), "well cond");
-        makeTest(Utils.identityMatrix(10), "ident");
+        makeTest(Utils.randomMatrix(10), "random matrix");
     }
 
     public static void makeTest(double[][] a, String comment) {
