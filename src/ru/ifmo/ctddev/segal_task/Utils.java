@@ -52,7 +52,6 @@ public class Utils {
 
     public static double[][] randomMatrix(int n) {
         double[][] a = new double[n][n + 1];
-
         for (int i = 0; i < n; i++) {
             for (int j = 0; j < n; j++) {
                 a[i][j] = Math.random();

@@ -30,20 +30,37 @@ public class Main {
             }
             System.out.print("\n");
         }
+        System.out.println("Random conditioned matrix: ");
 
-        makeTest(Utils.getIllConditionedMatrix(10), "ill cond");
-        makeTest(Utils.getWellConditionedMatrix(10), "well cond");
-        makeTest(Utils.randomMatrix(10), "random matrix");
+        double[][] rndM = Utils.randomMatrix(10);
+        for (int i = 0; i < 10; i++) {
+            for (int j = 0; j <= 10; j++) {
+                System.out.print(rndM[i][j] + " ");
+
+            }
+            System.out.print("\n");
+        }
+        makeTest(tt, "ill cond");
+        makeTest(ttt, "well cond");
+        makeTest(rndM, "random matrix");
     }
 
     public static void makeTest(double[][] a, String comment) {
         System.out.println("=== Gauss (" + comment + "):");
-        Gauss.solve(a);
+        Gauss.solve(makeArrayCopy(a));
         System.out.println("=== Jacobi (" + comment + "):");
-        Jacobi.solve(a);
+        Jacobi.solve(makeArrayCopy(a));
         System.out.println("=== Seidel (" + comment + "):");
-        Seidel.process(10, a, 1);
+        Seidel.process(10, makeArrayCopy(a), 1);
         System.out.println("=== Gradient (" + comment + "):");
-        Grad.process(10, a);
+        Grad.process(10, makeArrayCopy(a));
+    }
+
+    private static double[][] makeArrayCopy(double[][] a){
+        double ret[][] = new double[10][11];
+        for (int i =0;i<10;i++){
+            System.arraycopy(a[i], 0, ret[i], 0, 11);
+        }
+        return ret;
     }
 }
