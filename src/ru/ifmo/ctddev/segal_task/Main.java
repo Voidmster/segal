@@ -11,41 +11,25 @@ public class Main {
 //                a[i][j] = f.nextDouble();
 //            }
 //        }
-//        makeTest(a, n);
-        System.out.println("Ill conditioned matrix: ");
+//        makeTest(a, n)
         double[][] tt = Utils.getIllConditionedMatrix(10);
-        for (int i = 0; i < 10; i++) {
-            for (int j = 0; j <= 10; j++) {
-                System.out.print(tt[i][j] + " ");
-            }
-            System.out.print("\n");
-        }
-
-        System.out.println("Well conditioned matrix: ");
         double[][] ttt = Utils.getWellConditionedMatrix(10);
-        for (int i = 0; i < 10; i++) {
-            for (int j = 0; j <= 10; j++) {
-                System.out.print(ttt[i][j] + " ");
-
-            }
-            System.out.print("\n");
-        }
-        System.out.println("Random conditioned matrix: ");
-
         double[][] rndM = Utils.randomMatrix(10);
-        for (int i = 0; i < 10; i++) {
-            for (int j = 0; j <= 10; j++) {
-                System.out.print(rndM[i][j] + " ");
-
-            }
-            System.out.print("\n");
-        }
         makeTest(tt, "ill cond");
         makeTest(ttt, "well cond");
         makeTest(rndM, "random matrix");
     }
 
     public static void makeTest(double[][] a, String comment) {
+        System.out.println("\n\n~~~~~~~ " + comment + " ~~~~~~~~");
+        for (int i = 0; i < 10; i++) {
+            for (int j = 0; j <= 10; j++) {
+                System.out.print(a[i][j] + " ");
+
+            }
+            System.out.print("\n");
+        }
+
         System.out.println("=== Gauss (" + comment + "):");
         Gauss.solve(makeArrayCopy(a));
         System.out.println("=== Jacobi (" + comment + "):");

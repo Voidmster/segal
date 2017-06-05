@@ -18,8 +18,9 @@ public class Jacobi {
                 }
             }
         }
+
         if (sumD < sum) {
-            System.out.println("Sorry, I can't solve this!\n\n");
+            System.out.println("Sorry, I can't solve this!");
             return;
         }
         double[] x = new double[N];
@@ -53,7 +54,7 @@ public class Jacobi {
             }
         } while (norm > 1e-9 && iteration < 1e6);
         for (int i = 0; i < N; i++) {
-            System.out.println(String.format("%.8f", x[i]));
+            System.out.println(String.format("%.12f", x[i]));
         }
         System.out.println("Count of iterations " + iteration);
     }

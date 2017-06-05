@@ -50,7 +50,7 @@ public class Seidel {
             }
         } while (norm > eps && iteration < 1e3);
         for (int i = 0; i < size; i++) {
-            System.out.println(String.format("%.8f", x[i]));
+            System.out.println(String.format("%.12f", x[i]));
         }
         System.out.println("Number of iterations:" + iteration);
     }

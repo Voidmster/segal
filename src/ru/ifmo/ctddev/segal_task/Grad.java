@@ -70,7 +70,7 @@ public class Grad {
                 z[i] = r[i] + beta * z[i];
         }
         for (int i = 0; i < size; i++) {
-            System.out.println(String.format("%.8f", x[i]));
+            System.out.println(String.format("%.12f", x[i]));
         }
 
     }

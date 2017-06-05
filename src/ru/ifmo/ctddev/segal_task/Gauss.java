@@ -33,7 +33,7 @@ public class Gauss {
             }
         }
         for (int i = 0; i < N; i++) {
-            System.out.println(String.format("%.8f", a[i][N] / a[i][i]));
+            System.out.println(String.format("%.12f", a[i][N] / a[i][i]));
         }
         double mx1 = 0, mx2 = 0;
         for (int i = 0; i < N; i++) {
